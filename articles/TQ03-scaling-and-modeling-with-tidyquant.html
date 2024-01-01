@@ -101,7 +101,7 @@
                         <h4 data-toc-skip class="author">Matt
 Dancho</h4>
             
-            <h4 data-toc-skip class="date">2023-12-30</h4>
+            <h4 data-toc-skip class="date">2024-01-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/business-science/tidyquant/blob/HEAD/vignettes/TQ03-scaling-and-modeling-with-tidyquant.Rmd" class="external-link"><code>vignettes/TQ03-scaling-and-modeling-with-tidyquant.Rmd</code></a></small>
       <div class="d-none name"><code>TQ03-scaling-and-modeling-with-tidyquant.Rmd</code></div>
@@ -256,7 +256,7 @@ the vignette.</em></p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/tq_index.html">tq_index</a></span><span class="op">(</span><span class="st">"DOW"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/tq_get.html">tq_get</a></span><span class="op">(</span>get <span class="op">=</span> <span class="st">"stock.prices"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 8,304 × 15</span></span></span>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 7,548 × 15</span></span></span>
 <span><span class="co">##    symbol company      identifier sedol weight sector shares_held local_currency</span></span>
 <span><span class="co">##    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 1</span> UNH    UNITEDHEALT… 91324P102  2917… 0.091<span style="text-decoration: underline;">5</span> -          5<span style="text-decoration: underline;">645</span>814 USD           </span></span>
@@ -269,7 +269,7 @@ the vignette.</em></p>
 <span><span class="co">## <span style="color: #BCBCBC;"> 8</span> UNH    UNITEDHEALT… 91324P102  2917… 0.091<span style="text-decoration: underline;">5</span> -          5<span style="text-decoration: underline;">645</span>814 USD           </span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 9</span> UNH    UNITEDHEALT… 91324P102  2917… 0.091<span style="text-decoration: underline;">5</span> -          5<span style="text-decoration: underline;">645</span>814 USD           </span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">10</span> UNH    UNITEDHEALT… 91324P102  2917… 0.091<span style="text-decoration: underline;">5</span> -          5<span style="text-decoration: underline;">645</span>814 USD           </span></span>
-<span><span class="co">## <span style="color: #949494;"># ℹ 8,294 more rows</span></span></span>
+<span><span class="co">## <span style="color: #949494;"># ℹ 7,538 more rows</span></span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 7 more variables: date &lt;date&gt;, open &lt;dbl&gt;, high &lt;dbl&gt;, low &lt;dbl&gt;,</span></span></span>
 <span><span class="co">## <span style="color: #949494;">#   close &lt;dbl&gt;, volume &lt;dbl&gt;, adjusted &lt;dbl&gt;</span></span></span></code></pre>
 <p>You can use any applicable “getter” to get data for <strong>every
@@ -426,7 +426,7 @@ function. However, there is one problem: the output is not “tidy”.</p>
 <span><span class="co">## </span></span>
 <span><span class="co">## Coefficients:</span></span>
 <span><span class="co">## (Intercept)   year(date)  </span></span>
-<span><span class="co">##    58.86278     -0.02915</span></span></code></pre>
+<span><span class="co">##    58.86281     -0.02915</span></span></code></pre>
 <p>We can utilize the <code>broom</code> package to get “tidy” data from
 the model. There’s three primary functions:</p>
 <ol style="list-style-type: decimal">
@@ -585,20 +585,20 @@ results.</p>
 <span><span class="co">## <span style="color: #BBBB00;">!</span> x = 'BAD APPLE', get = 'stock.prices': Error in getSymbols.yahoo(Symbols = "BAD APPLE", env = &lt;environment&gt;, : Unable to import "BAD APPLE".</span></span>
 <span><span class="co">## URL using bad/illegal format or missing URL</span></span>
 <span><span class="co">##  Removing BAD APPLE.</span></span></code></pre>
-<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 5,536 × 8</span></span></span>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 5,032 × 8</span></span></span>
 <span><span class="co">##    symbol date        open  high   low close    volume adjusted</span></span>
 <span><span class="co">##    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 1</span> AAPL   2013-01-02  19.8  19.8  19.3  19.6 560<span style="text-decoration: underline;">518</span>000     16.8</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 2</span> AAPL   2013-01-03  19.6  19.6  19.3  19.4 352<span style="text-decoration: underline;">965</span>200     16.6</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 3</span> AAPL   2013-01-04  19.2  19.2  18.8  18.8 594<span style="text-decoration: underline;">333</span>600     16.1</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 4</span> AAPL   2013-01-07  18.6  18.9  18.4  18.7 484<span style="text-decoration: underline;">156</span>400     16.0</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 5</span> AAPL   2013-01-08  18.9  19.0  18.6  18.8 458<span style="text-decoration: underline;">707</span>200     16.0</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 6</span> AAPL   2013-01-09  18.7  18.8  18.4  18.5 407<span style="text-decoration: underline;">604</span>400     15.8</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 7</span> AAPL   2013-01-10  18.9  18.9  18.4  18.7 601<span style="text-decoration: underline;">146</span>000     16.0</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 8</span> AAPL   2013-01-11  18.6  18.8  18.5  18.6 350<span style="text-decoration: underline;">506</span>800     15.9</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 9</span> AAPL   2013-01-14  18.0  18.1  17.8  17.9 734<span style="text-decoration: underline;">207</span>600     15.3</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">10</span> AAPL   2013-01-15  17.8  17.8  17.3  17.4 876<span style="text-decoration: underline;">772</span>400     14.8</span></span>
-<span><span class="co">## <span style="color: #949494;"># ℹ 5,526 more rows</span></span></span></code></pre>
+<span><span class="co">## <span style="color: #BCBCBC;"> 1</span> AAPL   2014-01-02  19.8  19.9  19.7  19.8 234<span style="text-decoration: underline;">684</span>800     17.3</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 2</span> AAPL   2014-01-03  19.7  19.8  19.3  19.3 392<span style="text-decoration: underline;">467</span>600     16.9</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 3</span> AAPL   2014-01-06  19.2  19.5  19.1  19.4 412<span style="text-decoration: underline;">610</span>800     17.0</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 4</span> AAPL   2014-01-07  19.4  19.5  19.2  19.3 317<span style="text-decoration: underline;">209</span>200     16.9</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 5</span> AAPL   2014-01-08  19.2  19.5  19.2  19.4 258<span style="text-decoration: underline;">529</span>600     17.0</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 6</span> AAPL   2014-01-09  19.5  19.5  19.1  19.2 279<span style="text-decoration: underline;">148</span>800     16.8</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 7</span> AAPL   2014-01-10  19.3  19.3  19.0  19.0 304<span style="text-decoration: underline;">976</span>000     16.7</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 8</span> AAPL   2014-01-13  18.9  19.4  18.9  19.1 378<span style="text-decoration: underline;">492</span>800     16.8</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 9</span> AAPL   2014-01-14  19.2  19.5  19.2  19.5 332<span style="text-decoration: underline;">561</span>600     17.1</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">10</span> AAPL   2014-01-15  19.8  20.0  19.7  19.9 391<span style="text-decoration: underline;">638</span>800     17.5</span></span>
+<span><span class="co">## <span style="color: #949494;"># ℹ 5,022 more rows</span></span></span></code></pre>
 <p>Now switching <code>complete_cases = FALSE</code> will retain any
 errors as <code>NA</code> values in a nested data frame. Notice that the
 error message and output change. The error message now states that the
@@ -612,20 +612,20 @@ data structure.</p>
 <span><span class="co">## Caused by warning:</span></span>
 <span><span class="co">## <span style="color: #BBBB00;">!</span> x = 'BAD APPLE', get = 'stock.prices': Error in getSymbols.yahoo(Symbols = "BAD APPLE", env = &lt;environment&gt;, : Unable to import "BAD APPLE".</span></span>
 <span><span class="co">## URL using bad/illegal format or missing URL</span></span></code></pre>
-<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 5,537 × 8</span></span></span>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 5,033 × 8</span></span></span>
 <span><span class="co">##    symbol date        open  high   low close    volume adjusted</span></span>
 <span><span class="co">##    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 1</span> AAPL   2013-01-02  19.8  19.8  19.3  19.6 560<span style="text-decoration: underline;">518</span>000     16.8</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 2</span> AAPL   2013-01-03  19.6  19.6  19.3  19.4 352<span style="text-decoration: underline;">965</span>200     16.6</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 3</span> AAPL   2013-01-04  19.2  19.2  18.8  18.8 594<span style="text-decoration: underline;">333</span>600     16.1</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 4</span> AAPL   2013-01-07  18.6  18.9  18.4  18.7 484<span style="text-decoration: underline;">156</span>400     16.0</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 5</span> AAPL   2013-01-08  18.9  19.0  18.6  18.8 458<span style="text-decoration: underline;">707</span>200     16.0</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 6</span> AAPL   2013-01-09  18.7  18.8  18.4  18.5 407<span style="text-decoration: underline;">604</span>400     15.8</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 7</span> AAPL   2013-01-10  18.9  18.9  18.4  18.7 601<span style="text-decoration: underline;">146</span>000     16.0</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 8</span> AAPL   2013-01-11  18.6  18.8  18.5  18.6 350<span style="text-decoration: underline;">506</span>800     15.9</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;"> 9</span> AAPL   2013-01-14  18.0  18.1  17.8  17.9 734<span style="text-decoration: underline;">207</span>600     15.3</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">10</span> AAPL   2013-01-15  17.8  17.8  17.3  17.4 876<span style="text-decoration: underline;">772</span>400     14.8</span></span>
-<span><span class="co">## <span style="color: #949494;"># ℹ 5,527 more rows</span></span></span></code></pre>
+<span><span class="co">## <span style="color: #BCBCBC;"> 1</span> AAPL   2014-01-02  19.8  19.9  19.7  19.8 234<span style="text-decoration: underline;">684</span>800     17.3</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 2</span> AAPL   2014-01-03  19.7  19.8  19.3  19.3 392<span style="text-decoration: underline;">467</span>600     16.9</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 3</span> AAPL   2014-01-06  19.2  19.5  19.1  19.4 412<span style="text-decoration: underline;">610</span>800     17.0</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 4</span> AAPL   2014-01-07  19.4  19.5  19.2  19.3 317<span style="text-decoration: underline;">209</span>200     16.9</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 5</span> AAPL   2014-01-08  19.2  19.5  19.2  19.4 258<span style="text-decoration: underline;">529</span>600     17.0</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 6</span> AAPL   2014-01-09  19.5  19.5  19.1  19.2 279<span style="text-decoration: underline;">148</span>800     16.8</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 7</span> AAPL   2014-01-10  19.3  19.3  19.0  19.0 304<span style="text-decoration: underline;">976</span>000     16.7</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 8</span> AAPL   2014-01-13  18.9  19.4  18.9  19.1 378<span style="text-decoration: underline;">492</span>800     16.8</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 9</span> AAPL   2014-01-14  19.2  19.5  19.2  19.5 332<span style="text-decoration: underline;">561</span>600     17.1</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">10</span> AAPL   2014-01-15  19.8  20.0  19.7  19.9 391<span style="text-decoration: underline;">638</span>800     17.5</span></span>
+<span><span class="co">## <span style="color: #949494;"># ℹ 5,023 more rows</span></span></span></code></pre>
 <p>In both cases, the prudent user will review the warnings to determine
 what happened and whether or not this is acceptable. In the
 <code>complete_cases = FALSE</code> example, if the user attempts to
