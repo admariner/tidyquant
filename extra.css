@@ -7,6 +7,10 @@
     color: #FFFFFF !important;
 }
 
+#toc>.nav a.nav-link {
+    color: #000000 !important;
+}
+
 .navbar-dark .navbar-nav .active>.nav-link {
     background-color: #18bc9c;
 }
